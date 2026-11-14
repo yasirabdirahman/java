@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Java – Sual iyo Jawaab</title>
+<title>UML – Sual iyo Jawaab</title>
 <style>
 :root{--bg:#f4f6fb;--card:#fff;--text:#1b1f2a;--muted:#5b6475;--border:#dde2ee;color-scheme:light;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
@@ -36,93 +36,102 @@ details[open] summary{border-bottom:1px dashed var(--border)}
 .ans{padding:12px 14px;color:var(--text)}
 .ans::before{content:"Jawaab: ";color:var(--a);font-weight:700}
 code{background:color-mix(in srgb,var(--a) 14%,var(--card));padding:1px 6px;border-radius:5px;font-family:ui-monospace,Consolas,monospace;font-size:.92em}
+
+.quiz{margin-top:30px;padding-top:20px;border-top:2px dashed var(--a)}
+.quiz h3{margin:0;font-size:20px;color:var(--a)}
+.mq{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:12px 14px;margin-bottom:12px}
+.mq p{margin:0 0 6px}
+.op{display:flex;gap:10px;align-items:center;width:100%;text-align:left;background:transparent;color:var(--text);font-weight:500;border:1px solid var(--border);border-radius:8px;padding:8px 10px;margin-top:6px}
+.op .ci{flex:none;width:28px;height:28px;border-radius:50%;border:2px solid var(--a);display:grid;place-items:center;font-weight:700;font-size:13px;color:var(--a)}
+.op:hover{background:color-mix(in srgb,var(--a) 10%,var(--card))}
+.mq.done .op{cursor:default}
+.op.ok{background:color-mix(in srgb,#16a34a 18%,var(--card));border-color:#16a34a}
+.op.ok .ci{background:#16a34a;border-color:#16a34a;color:#fff}
+.op.no{background:color-mix(in srgb,#dc2626 16%,var(--card));border-color:#dc2626}
+.op.no .ci{background:#dc2626;border-color:#dc2626;color:#fff}
 footer{text-align:center;color:var(--muted);padding:20px;font-size:14px}
 </style>
 </head>
 <body>
 <header>
-  <h1>☕ Java – Sual iyo Jawaab</h1>
-  <p>Object Oriented Programming II · 4 chapter · guji sual kasta si aad jawaabta u aragto</p>
+  <h1>📐 UML – Sual iyo Jawaab</h1>
+  <p>Unified Modeling Language · 4 qeyb · guji sual kasta si aad jawaabta u aragto</p>
 </header>
 <nav id="nav"></nav>
 <main id="main"></main>
-<footer>Waxaa laga sameeyay slides-ka Chapter 1–4 · Guul!</footer>
+<footer>Waxaa laga sameeyay slides-ka UML · Guul!</footer>
 <script>
 const D=[
-{c:"c1",t:"Chapter 1: Introduction to Java Programming",s:"History, features, JDK / JRE / JVM",qa:[
-["Who developed Java, and in which year?","Java was developed by James Gosling and his team at Sun Microsystems in 1995. Oracle acquired Sun Microsystems in 2010."],
-["What was Java’s original name, and why was it changed?","It was called <code>Oak</code>. The name was changed to Java because Oak was already a registered company/trademark."],
-["Why is Java called both a language and a platform?","It is a high-level, object-oriented, secure language, and it also has a runtime environment (JRE) and an API, so it is a platform too."],
-["Name four features of Java.","Simple, Portable, Object-Oriented, Platform-Independent, Secure, Multithreaded, Robust, Dynamic (any four)."],
-["What does WORA mean?","“Write Once, Run Anywhere”: Java code is compiled into bytecode that runs on any system that has a JVM."],
-["Why is Java platform-independent?","Because source code is compiled into bytecode, and the JVM on each system converts that bytecode into machine-specific code."],
-["What does JDK stand for and what does it provide?","Java Development Kit. It provides the tools to write, compile (<code>javac</code>), debug and run Java programs. It contains the JRE."],
-["What is the JRE, and does it contain a compiler?","Java Runtime Environment: it contains the JVM, core libraries and runtime components to execute programs. It does <b>not</b> contain a compiler or debugger."],
-["What does the JVM do?","The Java Virtual Machine converts bytecode into machine code and runs it. It also handles memory management, garbage collection and security."],
-["What is the difference between JDK and JRE?","JDK is for developing Java programs; JRE is for running them. JDK is a superset of JRE."],
-["Which Java version introduced Generics and the enhanced for-loop?","Java 5 (2004)."],
-["What did Java 9 introduce (2017)?","Modularity, through the Java Platform Module System (JPMS)."],
-["Why is Java called “robust”?","It has automatic garbage collection and strong memory management that help prevent crashes."],
-["Where is Java used today?","Internet programming, mobile devices, games, e-business solutions and more."]
+{c:"c1",n:"Chapter 1",t:"Chapter 1: Introduction to UML",s:"What UML is, its history, diagrams and architecture",qa:[
+["What is the UML?","The Unified Modeling Language is a family of graphical notations, backed by a single meta-model, that helps in describing and designing software systems, particularly systems built in the object-oriented style."],
+["When did UML first appear, and who controls it?","UML first appeared in 1997. It is standardized, and its content is controlled by the Object Management Group (OMG), a consortium of companies."],
+["Why is it called “Unified”?","UML combined the best of the object-oriented modeling methodologies that existed in the early 1990s. Grady Booch, James Rumbaugh and Ivar Jacobson are its primary contributors."],
+["What does “Modeling” mean in UML?","Presenting a simplified view of reality to make the design and implementation of object-oriented systems easier. All creative disciplines use some form of modeling."],
+["Why is UML called a “Language”?","Because it is primarily a graphical language that follows a precise syntax. UML 2 is the most recent version covered in the slides."],
+["How is UML useful as documentation?","It is a language for documenting design: it gives a record of what has been built and helps bring new programmers up to speed."],
+["How did the UML come about?","OO modeling languages appeared in the late 1970s (Smalltalk was the first widely used OO language). By the early 1990s there was a flood of modeling languages, so in 1994 Booch and Rumbaugh began the UML effort, and Jacobson joined soon after."],
+["What is the goal of UML?","To be a comprehensive modeling language that facilitates communication between all members of the development effort."],
+["How many types of diagrams does UML 2 support?","13 different types. Each can be expressed with varying detail, and not all of them need to be used to model a software system."],
+["Does UML say which diagrams to use for a project?","No. The UML does not offer an opinion on which diagrams are most helpful for a particular type of project."],
+["What is “legal UML”?","Even though UML is standardized, developers take liberties with its syntax. These liberties often become standard conventions in later releases, just as in natural languages."],
+["Is UML enough on its own?","No. Even if UML is your primary modeling language, don’t hesitate to use other diagrams to model your design."],
+["What is architecture, and what are its five views?","Architecture refers to the different perspectives from which a complex system can be viewed. The five views are: <b>Use case</b> (users, analysts, testers), <b>Design</b> (classes, interfaces, collaborations), <b>Process</b> (active classes/threads), <b>Implementation</b> (files) and <b>Deployment</b> (nodes where software resides)."],
+["What are the three characteristics of the UML development process?","It is use case driven, architecture-centric, and iterative and incremental. UML is involved in every phase of the software development life cycle."]
 ]},
-{c:"c2",t:"Chapter 2: Elementary Programming",s:"Variables, data types, strings, operators",qa:[
-["What is a variable?","A container that holds a value while the program runs. Every variable has a data type."],
-["Write the syntax for declaring a variable.","<code>type variableName = value;</code> for example <code>String name = \"Jama\";</code>"],
-["Name four basic variable types and what they store.","<code>String</code> – text; <code>int</code> – whole numbers; <code>char</code> – a single character; <code>boolean</code> – true or false."],
-["What is the final keyword used for?","It makes a variable a constant (read-only). <code>final int myNum = 15; myNum = 20;</code> gives an error."],
-["How can you declare several variables of the same type in one line?","Use a comma-separated list: <code>int x = 5, y = 6, z = 60;</code>"],
-["How do you give the same value to several variables?","<code>int x, y, z; x = y = z = 60;</code>"],
-["What are identifiers? Give the naming rules.","Unique names of variables. They may contain letters, digits, underscores and $; must not start with a digit; no spaces; are case sensitive; cannot be reserved words; should start with a lowercase letter."],
-["What are keywords?","Reserved words with a special meaning in Java, such as <code>class</code>, <code>int</code>, <code>public</code>, <code>if</code>, <code>while</code>. They cannot be used as variable names."],
-["What are the two groups of data types?","Primitive types (byte, short, int, long, float, double, boolean, char) and non-primitive/reference types (String, Arrays, Classes)."],
-["Give three differences between primitive and non-primitive types.","Primitives are predefined and non-primitives are created by the programmer (except String); non-primitives can call methods and can be <code>null</code>; primitives start with a lowercase letter, non-primitives with an uppercase letter."],
-["How can you join two strings?","With the <code>+</code> operator (<code>first + \" \" + second</code>) or the <code>concat()</code> method (<code>first.concat(second)</code>)."],
-["Name the four groups of operators.","Arithmetic, Assignment, Comparison (relational) and Logical operators."],
-["With <code>int a = 10, b = 5;</code> what do <code>a + b</code> and <code>a % b</code> print?","<code>15</code> and <code>0</code> (the remainder of 10 ÷ 5)."],
-["With <code>a = 10, b = 5</code>, what do <code>(a &gt; b) &amp;&amp; (b &lt; 10)</code> and <code>!(a &gt; b)</code> print?","<code>true</code> and <code>false</code>."]
+{c:"c2",n:"Chapter 2",t:"Chapter 2: Development Process",s:"Iterative vs waterfall, planning, requirements and design",qa:[
+["What is the essential difference between iterative and waterfall processes?","How you break a project into smaller chunks. Waterfall breaks it down by <b>activity</b>; iterative breaks it down by <b>subsets of functionality</b>."],
+["How does the iterative style split a one-year project?","Into iterations (for example 3 months each). In each iteration you take a part of the requirements and do the complete life cycle (analysis, design, code, test). After the first iteration you have a system with about a quarter of the functionality, after two iterations about half."],
+["What is time boxing?","A technique that makes an iteration a fixed length of time. If you cannot build everything planned, you slip some functionality from the iteration, <b>not</b> the date of the iteration."],
+["What is the common concern about iterative development, and what is the answer?","Rework: iterative development assumes you will rework and delete code in later iterations. Software isn’t like manufacturing, so it is often more efficient to rework existing code than to patch around badly designed code."],
+["Name three practices that make rework more efficient.","Automated regression tests, refactoring and continuous integration."],
+["What is refactoring?","A disciplined technique for changing existing software using a series of small behavior-preserving transformations of the code base."],
+["What is continuous integration?","It keeps the team in sync: developers check in daily and automated builds run many times a day, including a large block of regression tests, so inconsistencies are caught and fixed quickly."],
+["When should you use predictive planning and when adaptive planning?","Don’t make a predictive plan until you have precise, accurate requirements and are confident they won’t change much. If you can’t get precise, accurate and stable requirements, use an adaptive planning style."],
+["What is requirements analysis, and which UML techniques help?","Figuring out what users and customers want the system to do. Useful techniques: use cases, a conceptual class diagram, an activity diagram (work flow of the organization) and a state diagram (for concepts with an interesting life cycle)."],
+["Which diagrams are useful in design?","Class diagrams from a software perspective, sequence diagrams (or CRC cards) for common scenarios, and state diagrams for classes with complex life histories."],
+["How is UML used in a waterfall life cycle?","The diagrams are produced as part of each phase, and end-of-phase documents usually include them. Waterfall usually implies UML is used as a <b>blueprint</b>."],
+["How is UML used in an iterative style?","As either a blueprint or a sketch. Each iteration doesn’t start from scratch: it modifies the existing documents and highlights the changes."],
+["Test yourself: What is a UML diagram, and why is UML used in software development?","A UML diagram is a graphical view of part of a system using UML notation. UML is used to describe, design and document software, and to communicate clearly between developers, analysts and stakeholders."],
+["Test yourself: What is the difference between a model and a diagram?","A model is the simplified representation of the system (its elements and relationships); a diagram is one graphical view of part of that model."],
+["Test yourself: What are the major types of UML diagram?","UML 2 has 13 diagram types, grouped as structural diagrams (such as class diagrams) and behavioral diagrams (such as use case, activity, state and sequence diagrams)."]
 ]},
-{c:"c3",t:"Chapter 3: Control Statements and Arrays",s:"if / else, switch, loops, arrays",qa:[
-["List the six comparison operators.","<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;</code>, <code>&gt;=</code>, <code>==</code>, <code>!=</code>"],
-["What does the if statement do?","It runs a block of code only if its condition is true: <code>if (condition) { ... }</code>"],
-["What is the purpose of else and else if?","<code>else</code> runs when the condition is false; <code>else if</code> tests a new condition when the first one is false."],
-["What is printed? <code>int time = 20; if (time &lt; 18) {\"Good Day\"} else {\"Good Evening\"}</code>","“Good Evening”, because 20 is not less than 18, so the else block runs."],
-["What is printed? <code>int age = 18; if (age &gt;= 18) { print(\"You are eligible to vote.\"); }</code>","“You are eligible to vote.”, because 18 &gt;= 18 is true."],
-["When do we use a switch statement?","Instead of many if…else statements, when we choose one of many code blocks based on a single variable."],
-["What is the job of break in a switch?","It exits the switch block, so no more cases are tested or executed."],
-["What is the default keyword for?","It specifies code that runs when no case matches."],
-["What is printed? <code>int day = 2; switch(day){case 1: ...\"Monday\"; break; case 2: ...\"Tuesday\"; break; default: ...}</code>","<code>Tuesday</code>"],
-["Name the three kinds of loops.","<code>for</code> loop, <code>while</code> loop and <code>do/while</code> loop."],
-["What are the three parts of a for loop?","Initialization (runs once before the loop), condition (checked before each round) and update (runs after each round): <code>for (int x = 0; x &lt; 5; x++)</code>"],
-["What does <code>for (int x = 0; x &lt; 5; x++) System.out.println(x);</code> print?","The numbers 0, 1, 2, 3, 4."],
-["What does <code>for (int x = 0; x &lt;= 10; x = x + 2)</code> print?","The even numbers 0, 2, 4, 6, 8, 10."],
-["When do we use a while loop, and how is do/while different?","While is used when we don’t know how many times to repeat. A do/while loop runs the code block <b>once before</b> checking the condition."],
-["What is an array? How do you declare and fill one?","A collection of values of the same type under one variable name: <code>String[] names = {\"Ahmed\", \"Ali\", \"Muna\", \"Farah\"};</code>"],
-["How do you access and change an array element?","By index (starting at 0): <code>names[0]</code> gives “Ahmed”; <code>names[0] = \"Hassan\";</code> changes it."],
-["How do you find the size of an array?","Use the <code>length</code> property: <code>names.length</code> is 4."],
-["How do you print a whole array, and what must you import?","<code>System.out.println(Arrays.toString(numbers));</code> with <code>import java.util.Arrays;</code>"],
-["What is a multidimensional array? What is <code>numbers[1][2]</code> in <code>{{1,2,3,4},{5,6,7}}</code>?","An array of arrays (like a table of rows and columns). <code>numbers[1][2]</code> is <code>7</code>: the third element of the second array."]
+{c:"c3",n:"Ch 3 · Class Diagram",t:"Chapter 3: UML Class Diagram",s:"Classes, attributes, methods, relationships, visibility",qa:[
+["What is a class diagram?","A UML diagram that represents the structure of a system by showing its classes and how they relate to each other."],
+["What does a class diagram describe?","Classes (main building blocks), attributes (data stored in a class), methods/operations (functions a class can perform) and relationships (connections between classes)."],
+["Give the uses of a class diagram.","Model system structure, design software architecture (blueprint for OOP), understand relationships (inheritance, association, aggregation, composition), support database design, documentation and code generation."],
+["Name five advantages of class diagrams.","Easy visualization, improved communication, supports reuse, a blueprint for development, reduces errors (problems found early) and a standardized notation."],
+["Name the limitations of class diagrams.","Static view only (no runtime behavior), can become complex, time-consuming, requires expertise and is not suitable for dynamic systems alone (no workflows or real-time interactions)."],
+["What are the four basic components of a class diagram?","Class, methods, attributes and relationships."],
+["What is a class? Give examples.","A blueprint of objects. Examples: <code>Student</code>, <code>BankAccount</code>."],
+["What are methods and attributes? Give examples.","Methods are actions/functions of a class (e.g. <code>deposit()</code>, <code>withdraw()</code>). Attributes are its properties (e.g. <code>name</code>, <code>id</code>, <code>balance</code>)."],
+["Name the types of relationships.","Association (linked classes), inheritance (parent–child) and aggregation/composition (whole–part)."],
+["Give the access modifiers and their UML symbols.","Public <code>+</code>, Private <code>-</code>, Protected <code>#</code>, Package <code>~</code>, Derived <code>/</code>, Static (underlined)."],
+["Explain the Vehicle / Car example.","Car inherits all attributes (speed, number of passengers, fuel) and methods (<code>go()</code>, <code>stop()</code>, <code>changeDirection()</code>) of its parent class Vehicle, and adds its own attributes (model type, number of doors, auto maker) and methods (<code>Radio()</code>, <code>windshieldWiper()</code>, <code>ac/heat()</code>)."],
+["How is inheritance drawn in a class diagram?","With a solid line ending in a closed, hollow arrow pointing to the parent class."],
+["Why are class diagrams not enough for dynamic systems?","They show only static structure, so they cannot represent workflows, processes or real-time interactions. Other diagrams, such as sequence diagrams, are needed."],
+["Which two example diagrams appear in the slides?","A class diagram for an ATM system and a class diagram for a hotel system."]
 ]},
-{c:"c4",t:"Chapter 4: Java Methods",s:"Declaring, calling, parameters and return values",qa:[
-["What is a method?","A named block of Java statements that performs a specific task and runs when it is called."],
-["Why do we use methods?","Code reuse, readability, easier maintenance (change in one place) and easier testing."],
-["Explain the parts of <code>public static int add(int first, int second)</code>.","<code>public</code> – accessible from other classes; <code>static</code> – called without creating an object; <code>int</code> – return type; <code>add</code> – method name; <code>first, second</code> – parameters."],
-["What does void mean?","The method does not return a value."],
-["What is the difference between a parameter and an argument?","A parameter is the variable in the method definition; an argument is the actual value supplied when calling it. In <code>greet(\"Ahmed\")</code>, <code>name</code> is the parameter and <code>\"Ahmed\"</code> is the argument."],
-["What is printed by <code>greet(\"Amina\");</code> if greet prints “Welcome ” + name?","<code>Welcome Amina</code>"],
-["What does <code>addNumbers(10, 20)</code> print, if it prints “Sum = ” + (a + b)?","<code>Sum = 30</code>"],
-["What does the return statement do?","It sends a value back to the caller and ends the method. The return type must match the returned value."],
-["What is printed? <code>int result = add(5, 3); System.out.println(result);</code>","<code>8</code>: add(5, 3) returns 8, which is stored in result and printed."],
-["What does <code>calculateArea(5, 4)</code> return if it computes length * width?","<code>20</code>, so the program prints <code>Area = 20</code>."],
-["Trace: <code>multiply(int x, int y) { return x * y; }</code> and <code>int answer = multiply(4, 6);</code>","Parameters: x, y. Arguments: 4, 6. Returned value: 24. Printed: <code>24</code>."],
-["What is the difference between a void method and a value-returning method?","A void method performs an action without returning anything (<code>display()</code>); a value-returning method returns a value (<code>square(4)</code> returns 16)."],
-["Why is <code>sayHello()</code> able to run from main()?","Java starts execution from <code>main()</code>; calling <code>sayHello();</code> runs the statements inside that method. It is static, so it can be called from static main."],
-["Give four good practices for writing methods.","Use meaningful camelCase names starting with a lowercase letter; declare methods inside a class (not inside another method); keep each method focused on one task; match argument types and order with the parameters."]
+{c:"c4",n:"Ch 3 · Sequence Diagram",t:"Chapter 3: UML Modeling – Sequence Diagram",s:"Interactions between objects over time",qa:[
+["What is a sequence diagram?","A UML diagram that shows how objects, users or system components interact with each other in a specific order over time."],
+["What does a sequence diagram illustrate?","Who communicates with whom, what messages are exchanged and when the interactions happen."],
+["Give the main functions of a sequence diagram.","Showing interaction flow, representing time sequence (top to bottom), modeling system behavior, describing use cases and improving system design."],
+["Give the uses of sequence diagrams.","System analysis, software design, documentation, communication, debugging and testing, and business process modeling (online shopping, ATM transactions, hospital and banking systems)."],
+["Give the advantages of sequence diagrams.","Easy to understand, shows the exact order of events, improves communication, helps detect errors early, supports object-oriented design and gives better system documentation."],
+["List the basic components of a sequence diagram.","Actor, Object, Lifeline, Message, Activation Bar and Return Message."],
+["What is an actor?","A user or external system that interacts with the system."],
+["What is a lifeline?","A vertical dashed line showing the existence of an object over time."],
+["What is an activation bar?","A bar on a lifeline that shows when an object is active."],
+["What is a message, and what is a return message?","A message is communication between objects; a return message is the response sent back to the sender."],
+["In which direction does time flow in a sequence diagram?","From top to bottom: operations are shown in the order they occur."],
+["Describe the ATM withdrawal sequence.","1) Customer inserts the ATM card. 2) ATM requests the PIN. 3) Customer enters the PIN. 4) ATM verifies the PIN with the bank server. 5) Bank approves the request. 6) ATM dispenses cash. 7) Transaction completes."],
+["Who are the actor and objects in the ATM example?","The Customer is the actor; the ATM and the Bank Server are the objects that exchange messages."],
+["Conclusion: why are sequence diagrams important?","They visualize interactions between objects in time order, helping to analyze, design, document and improve software systems efficiently."]
 ]}
 ];
 const nav=document.getElementById("nav"),main=document.getElementById("main");
 D.forEach((ch,i)=>{
   const id="ch"+(i+1);
-  nav.insertAdjacentHTML("beforeend",`<a class="${ch.c}" href="#${id}">Chapter ${i+1}</a>`);
+  nav.insertAdjacentHTML("beforeend",`<a class="${ch.c}" href="#${id}">${ch.n}</a>`);
   main.insertAdjacentHTML("beforeend",`<section id="${id}" class="${ch.c}"><div class="wrap">
     <div class="head"><div><h2>${ch.t}</h2><small>${ch.s} · ${ch.qa.length} sual</small></div>
     <button type="button" data-open="0">Tus dhammaan jawaabaha</button></div>
@@ -134,6 +143,46 @@ main.addEventListener("click",e=>{
   b.closest("section").querySelectorAll("details").forEach(d=>d.open=open);
   b.dataset.open=open?"1":"0";
   b.textContent=open?"Qari dhammaan jawaabaha":"Tus dhammaan jawaabaha";
+});
+const M=[
+[["UML stands for…",["Universal Machine Language","Unified Markup Logic","Unified Modeling Language","Uniform Model Library"],2],
+ ["UML’s content is controlled by…",["Microsoft","Object Management Group (OMG)","Oracle","W3C"],1],
+ ["Primary contributors to UML were…",["Booch, Rumbaugh, Jacobson","Gosling, Ritchie, Thompson","Gates, Jobs, Wozniak","Turing, Knuth, Dijkstra"],0],
+ ["How many diagram types does UML 2 support?",["5","9","10","13"],3],
+ ["Which architecture view describes the files that make up the system?",["Use case view","Design view","Implementation view","Deployment view"],2]],
+[["The waterfall style breaks a project down by…",["subsets of functionality","team size","activity","programming language"],2],
+ ["The iterative style breaks a project down by…",["activity","subsets of functionality","team size","programming language"],1],
+ ["Time boxing fixes…",["the length of an iteration","the number of developers","the programming language","the project budget"],0],
+ ["Refactoring means…",["adding features quickly","small behavior-preserving changes to code","deleting all old code","writing user documentation"],1],
+ ["In a waterfall life cycle, UML is usually used as a…",["sketch","game","blueprint","database"],2]],
+[["A class diagram shows…",["runtime behavior","the structure of a system: classes and relationships","user interface colors","network traffic"],1],
+ ["Which symbol means public?",["-","#","+","~"],2],
+ ["Which symbol means private?",["-","+","#","~"],0],
+ ["Inheritance is drawn as…",["a dashed arrow","a solid line with a closed hollow arrow","a wavy line","a circle"],1],
+ ["Which one is an attribute of BankAccount?",["deposit()","withdraw()","balance","Car"],2]],
+[["A sequence diagram shows interactions in order of…",["color","time","size","cost"],1],
+ ["The vertical dashed line is called a…",["lifeline","actor","message","activation bar"],0],
+ ["What shows when an object is active?",["Lifeline","Return message","Activation bar","Actor"],2],
+ ["In the ATM example, after the customer inserts the card the ATM…",["dispenses cash","requests the PIN","approves the request","ends the transaction"],1],
+ ["A user or external system is called an…",["object","actor","lifeline","message"],1]]
+]
+;
+
+document.querySelectorAll("section").forEach((s,i)=>{
+  const L=M[i]; if(!L) return;
+  const z=document.createElement("div"); z.className="quiz";
+  z.innerHTML=`<div class="head"><div><h3>✏️ Dooro jawaabta saxda ah</h3><small>Guji goobadda (circle) jawaabta saxda ah · Dhibco: <b class="sc">0/${L.length}</b></small></div><button type="button" class="rs">Dib u bilow</button></div>`+
+  L.map((x,k)=>`<div class="mq" data-a="${x[2]}"><p><b>${k+1}.</b> ${x[0]}</p>${x[1].map((o,j)=>`<button type="button" class="op" data-j="${j}"><span class="ci">${"ABCD"[j]}</span><span>${o}</span></button>`).join("")}</div>`).join("");
+  s.querySelector(".wrap").appendChild(z);
+});
+function upd(z){z.querySelector(".sc").textContent=z.querySelectorAll(".mq.right").length+"/"+z.querySelectorAll(".mq").length}
+document.addEventListener("click",e=>{
+  const o=e.target.closest(".op"), r=e.target.closest(".rs");
+  if(o){const q=o.closest(".mq"); if(q.classList.contains("done")) return;
+    q.classList.add("done"); const a=+q.dataset.a;
+    q.querySelectorAll(".op").forEach((b,j)=>{if(j===a)b.classList.add("ok"); else if(b===o)b.classList.add("no");});
+    if(+o.dataset.j===a) q.classList.add("right"); upd(q.closest(".quiz"));}
+  if(r){const z=r.closest(".quiz"); z.querySelectorAll(".mq").forEach(q=>{q.className="mq";q.querySelectorAll(".op").forEach(b=>b.className="op")}); upd(z);}
 });
 function show(){
   let id=location.hash.slice(1); if(!/^ch[1-4]$/.test(id)) id="ch1";
